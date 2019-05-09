@@ -99,16 +99,16 @@ class App extends Component {
 
   handleChangeScoringSystem = (event) => {
     const scoringSystem = event.target.value;
-    this.setState({
-      scoringSystem,
-      textInput: ''
-    });
+    this.setState({ scoringSystem});
   }
 
   handleChangeSize = (event) => {
     const size = parseInt(event.target.value);
     const letterObjs = Array(size).fill(null).map(letterObj => new Letter());
-    this.setState({ letterObjs });
+    this.setState({
+      letterObjs,
+      textInput: null
+     });
   }
 
   handleMouseOver = (i) => {
