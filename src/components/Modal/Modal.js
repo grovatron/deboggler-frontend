@@ -1,8 +1,13 @@
 import React from 'react';
+import styles from './Modal.module.css';
 
 const Modal = (props) => {
   return (
-    <div />
+    <div className={styles.modal}>
+      <div className={styles['modal-text']}>
+        {props.message}
+      </div>
+    </div>
   )
 }
 
