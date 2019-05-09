@@ -5,9 +5,10 @@ const GridSquare = (props) => {
 
   const value = props.value !== 0 ? props.value : null;
   const mod = props.modifier !== 'none' ? props.modifier: null;
+  const modStyle = mod ? mod.toLowerCase() : null
 
   return (
-    <div className={styles['grid-square']} points={value} mod={mod}>
+    <div className={[styles['grid-square'], styles[modStyle]].join(' ')} points={value} mod={mod}>
       <input
         type='text'
         value={props.letter}
