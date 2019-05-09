@@ -3,6 +3,7 @@ import Modal from './components/Modal/Modal';
 import Header from './components/Header/Header';
 import Deboggler from './components/Deboggler/Deboggler';
 import Footer from './components/Footer/Footer';
+import Letter from './models/Letter';
 import axios from 'axios';
 
 class App extends Component {
@@ -10,7 +11,8 @@ class App extends Component {
     super(props);
     this.state = {
       bootingUp: true,
-      messageText: 'Connecting...'
+      messageText: 'Connecting...',
+      letterObjs: Array(16).fill(null).map(letterObj => new Letter())
     };
   }
 

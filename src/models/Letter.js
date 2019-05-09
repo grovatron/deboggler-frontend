@@ -5,3 +5,5 @@ class Letter {
     this.modifier = 'none';
   }
 }
+
+export default Letter;
