@@ -7,7 +7,9 @@ import WordList from '../WordList/WordList';
 const Deboggler = (props) => {
   return (
     <>
-      <GridContainer />
+      <GridContainer>
+        <Grid />
+      </GridContainer>
       <TextInput />
       <MenuStrip />
       <WordList />
