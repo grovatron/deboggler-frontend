@@ -1,0 +1,9 @@
+.menu-strip {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 20rem;
+  margin-left:  auto;
+  margin-right: auto;
+  margin-top: 1rem;
+}

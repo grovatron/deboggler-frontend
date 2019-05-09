@@ -19,7 +19,9 @@ const Deboggler = (props) => {
         value={props.textInput}
         changeText={(event) => props.changeText(event)}
         handleSubmit={(event) => props.handleSubmit(event)}/>
-      <MenuStrip />
+      <MenuStrip
+        scoringSystem={props.scoringSystem}
+        changeScoring={(event) => props.changeScoring(event)}/>
       <WordList />
     </>
   );

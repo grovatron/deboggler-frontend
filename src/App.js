@@ -97,6 +97,11 @@ class App extends Component {
       .catch(err => console.log(err));
   }
 
+  handleChangeScoringSystem = (event) => {
+    const scoringSystem = event.target.value;
+    this.setState({ scoringSystem });
+  }
+
   render() {
 
     const { letterObjs, textInput } = this.state;
@@ -111,7 +116,8 @@ class App extends Component {
           changeLetter={(i, event) => this.changeLetterHandler(i, event)}
           changeMod={(i, mod) => this.changeModifierHandler(i, mod)}
           changeText={(event) => this.changeTextInputHandler(event)}
-          handleSubmit={(event) => this.handleSubmit(event)}/>
+          handleSubmit={(event) => this.handleSubmit(event)}
+          changeScoring={(event) => this.handleChangeScoringSystem(event)}/>
         <Footer />
       </div>
     );
