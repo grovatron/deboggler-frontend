@@ -28,7 +28,7 @@ class App extends Component {
     return (
       <div>
         {this.state.bootingUp ? <Modal message={this.state.messageText}/> : null}
-        <Header />
+        <Header title="The Deboggler"/>
         <Deboggler />
         <Footer />
       </div>
