@@ -4,6 +4,10 @@
   padding: 5px;
 }
 
+.word-list-item:hover {
+  font-weight: 900;
+}
+
 .word-list-item[nth='0'] {
   background: #444;
   color: #eaeaea;
