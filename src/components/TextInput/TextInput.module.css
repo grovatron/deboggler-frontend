@@ -1,4 +1,15 @@
 .text-input {
+  width: 20rem;
+  margin: auto;
+  text-align: center;
+  color: #fff;
+}
+
+.text-input p {
+  margin: 0;
+}
+
+.input-wrapper {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
@@ -6,7 +17,7 @@
   margin: .5rem auto;
 }
 
-.text-input input[type='text'] {
+.input-wrapper input[type='text'] {
   box-sizing: border-box;
   height: 1.5rem;
   width: 13rem;
