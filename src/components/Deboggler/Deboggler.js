@@ -12,6 +12,7 @@ const Deboggler = (props) => {
         <Grid
           letterObjs={props.letterObjs}
           changeLetter={(i, event) => props.changeLetter(i, event)}
+          changeMod={(i, mod) => props.changeMod(i, mod)}
         />
       </GridContainer>
       <TextInput />

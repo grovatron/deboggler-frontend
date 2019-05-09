@@ -14,19 +14,29 @@ const GridSquare = (props) => {
         onChange={props.changeLetter}
         name='letter'
         autoComplete='off'/>
-        <div className={`${styles.selector} ${styles['mod-none']}`}>
+        <div
+          className={`${styles.selector} ${styles['mod-none']}`}
+          onMouseDown={() => props.changeMod('none')}>
           {'None'}
         </div>
-        <div className={`${styles.selector} ${styles['mod-dl']}`}>
+        <div
+          className={`${styles.selector} ${styles['mod-dl']}`}
+          onMouseDown={() => props.changeMod('DL')}>
           {'DL'}
         </div>
-        <div className={`${styles.selector} ${styles['mod-dw']}`}>
+        <div
+          className={`${styles.selector} ${styles['mod-dw']}`}
+          onMouseDown={() => props.changeMod('DW')}>
           {'DW'}
         </div>
-        <div className={`${styles.selector} ${styles['mod-tl']}`}>
+        <div
+          className={`${styles.selector} ${styles['mod-tl']}`}
+          onMouseDown={() => props.changeMod('TL')}>
           {'TL'}
         </div>
-        <div className={`${styles.selector} ${styles['mod-tw']}`}>
+        <div
+          className={`${styles.selector} ${styles['mod-tw']}`}
+          onMouseDown={() => props.changeMod('TW')}>
           {'TW'}
         </div>
     </div>

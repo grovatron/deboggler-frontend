@@ -21,6 +21,7 @@ const Grid = (props) => {
           value={value}
           modifier={modifier}
           changeLetter={(event) => props.changeLetter(index, event)}
+          changeMod={(mod) => props.changeMod(index, mod)}
           key={index} />
       );
     }

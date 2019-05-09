@@ -39,6 +39,12 @@ class App extends Component {
     this.setState({ letterObjs });
   }
 
+  changeModifierHandler = (i, modifier) => {
+    const letterObjs = this.state.letterObjs.map(letterObj => Object.assign({}, letterObj));
+    letterObjs[i].modifier = modifier;
+    this.setState({ letterObjs });
+  }
+
   render() {
 
     const letterObjs = this.state.letterObjs;
@@ -49,7 +55,8 @@ class App extends Component {
         <Header title="The Deboggler"/>
         <Deboggler
           letterObjs={letterObjs}
-          changeLetter={(i, event) => this.changeLetterHandler(i, event)}/>
+          changeLetter={(i, event) => this.changeLetterHandler(i, event)}
+          changeMod={(i, mod) => this.changeModifierHandler(i, mod)}/>
         <Footer />
       </div>
     );
