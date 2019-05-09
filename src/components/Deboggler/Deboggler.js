@@ -15,7 +15,9 @@ const Deboggler = (props) => {
           changeMod={(i, mod) => props.changeMod(i, mod)}
         />
       </GridContainer>
-      <TextInput />
+      <TextInput
+        value={props.textInput}
+        changeText={(event) => props.changeText(event)}/>
       <MenuStrip />
       <WordList />
     </>

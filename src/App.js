@@ -4,7 +4,7 @@ import Header from './components/Header/Header';
 import Deboggler from './components/Deboggler/Deboggler';
 import Footer from './components/Footer/Footer';
 import Letter from './models/Letter';
-import { isValidLetter } from './util/validation';
+import { isValidLetter, isValidTextInput } from './util/validation';
 import { valueMapping } from './util/data';
 import axios from 'axios';
 
@@ -14,7 +14,8 @@ class App extends Component {
     this.state = {
       bootingUp: true,
       messageText: 'Connecting...',
-      letterObjs: Array(16).fill(null).map(letterObj => new Letter())
+      letterObjs: Array(16).fill(null).map(letterObj => new Letter()),
+      textInput: ''
     };
   }
 
@@ -45,9 +46,28 @@ class App extends Component {
     this.setState({ letterObjs });
   }
 
+  changeTextInputHandler = (event) => {
+    const textInput = event.target.value.toUpperCase();
+    const size = this.state.letterObjs.length;
+    if (!isValidTextInput(textInput, size)) {
+      return;
+    }
+    const letterObjs = Array(size).fill(null).map(letterObj => new Letter());
+    for (let i = 0; i < textInput.length; i++) {
+      const letter = textInput.charAt(i) === 'Q' ? 'QU' : textInput.charAt(i);
+      const value = valueMapping[letter.toLowerCase()];
+      letterObjs[i].letter = letter;
+      letterObjs[i].value = value;
+    }
+    this.setState({
+      letterObjs,
+      textInput
+    });
+  }
+
   render() {
 
-    const letterObjs = this.state.letterObjs;
+    const { letterObjs, textInput } = this.state;
 
     return (
       <div>
@@ -55,8 +75,10 @@ class App extends Component {
         <Header title="The Deboggler"/>
         <Deboggler
           letterObjs={letterObjs}
+          textInput={textInput}
           changeLetter={(i, event) => this.changeLetterHandler(i, event)}
-          changeMod={(i, mod) => this.changeModifierHandler(i, mod)}/>
+          changeMod={(i, mod) => this.changeModifierHandler(i, mod)}
+          changeText={(event) => this.changeTextInputHandler(event)}/>
         <Footer />
       </div>
     );
