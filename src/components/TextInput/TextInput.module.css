@@ -1,20 +1,19 @@
 .text-input {
   width: 20rem;
-  margin: auto;
+  margin: .5rem auto;
   text-align: center;
   color: #fff;
 }
 
 .text-input p {
   margin: 0;
+  font-size: .8em;
 }
 
 .input-wrapper {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  width: 20rem;
-  margin: .5rem auto;
 }
 
 .input-wrapper input[type='text'] {

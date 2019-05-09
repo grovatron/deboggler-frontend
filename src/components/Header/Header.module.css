@@ -2,3 +2,7 @@
   text-align: center;
   color: #fff;
 }
+
+.header h1 {
+  margin: .5rem;
+}

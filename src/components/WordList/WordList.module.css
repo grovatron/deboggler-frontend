@@ -1,6 +1,6 @@
 .word-list {
   width: 20rem;
-  height: calc(100vh * .37);
+  height: calc(100vh * .3);
   margin: 1rem auto;
   background: #333;
   overflow: scroll;
