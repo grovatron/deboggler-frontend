@@ -15,14 +15,13 @@ class App extends Component {
   }
 
   componentDidMount() {
-    // axios.get(process.env.REACT_APP_PING)
-    //   .then(response => {
-    //     if (response.status === 200) {
-    //       this.setState({bootingUp: false});
-    //     }
-    //   })
-    //   .catch(err => this.setState({messageText: 'Cannot Connect'}));
-    setTimeout(() => this.setState({bootingUp : false}), 3000);
+    axios.get(process.env.REACT_APP_PING)
+      .then(response => {
+        if (response.status === 200) {
+          this.setState({bootingUp: false});
+        }
+      })
+      .catch(err => this.setState({messageText: 'Cannot Connect'}));
   }
 
   render() {
