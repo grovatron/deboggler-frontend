@@ -12,7 +12,7 @@ class App extends Component {
     this.state = {
       bootingUp: true,
       messageText: 'Connecting...',
-      letterObjs: Array(16).fill(null).map(letterObj => new Letter())
+      letterObjs: Array(16).fill(null).map(letterObj => new Letter('A'))
     };
   }
 
