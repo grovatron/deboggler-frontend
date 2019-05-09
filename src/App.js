@@ -99,7 +99,10 @@ class App extends Component {
 
   handleChangeScoringSystem = (event) => {
     const scoringSystem = event.target.value;
-    this.setState({ scoringSystem });
+    this.setState({
+      scoringSystem,
+      textInput: ''
+    });
   }
 
   handleChangeSize = (event) => {
