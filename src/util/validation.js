@@ -8,3 +8,12 @@ export const isValidTextInput = (textInput, size) => {
   }
   return true;
 }
+
+export const letterInputsValid = (letterInputs) => {
+  for (let i = 0; i < letterInputs.length; i++) {
+    if (letterInputs[i].letter === '') {
+      return false;
+    }
+  }
+  return true;
+}

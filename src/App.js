@@ -4,7 +4,7 @@ import Header from './components/Header/Header';
 import Deboggler from './components/Deboggler/Deboggler';
 import Footer from './components/Footer/Footer';
 import Letter from './models/Letter';
-import { isValidLetter, isValidTextInput } from './util/validation';
+import { isValidLetter, isValidTextInput, letterInputsValid } from './util/validation';
 import { valueMapping } from './util/data';
 import axios from 'axios';
 
@@ -14,7 +14,11 @@ class App extends Component {
     this.state = {
       bootingUp: true,
       messageText: 'Connecting...',
+      scoringSystem: 'with friends',
       letterObjs: Array(16).fill(null).map(letterObj => new Letter()),
+      cachedLetterObjs: null,
+      words: null,
+      filter: null,
       textInput: ''
     };
   }
@@ -32,6 +36,7 @@ class App extends Component {
   changeLetterHandler = (i, event) => {
     const letter = event.target.value.toUpperCase();
     if (!isValidLetter(letter)) {
+      console.log('not valid');
       return;
     }
     const letterObjs = this.state.letterObjs.map(letterObj => Object.assign({}, letterObj));
@@ -65,6 +70,33 @@ class App extends Component {
     });
   }
 
+  handleSubmit = (event) => {
+    const letterInputs = this.state.letterObjs;
+    if (!letterInputsValid(letterInputs)) {
+      return;
+    }
+    const scoringSystem = this.state.scoringSystem;
+    axios.post(process.env.REACT_APP_SERVICE, {
+      scoringSystem: scoringSystem,
+      letterInputs: letterInputs
+    })
+      .then(response => {
+        const words = response.data.sort((a, b) => {
+          let result = b.value - a.value;
+          if (result === 0) {
+            result = a.word - b.word;
+          }
+          return result;
+        });
+        this.setState({
+          words,
+          cachedLetterObjs: letterInputs,
+          filter: null
+        });
+      })
+      .catch(err => console.log(err));
+  }
+
   render() {
 
     const { letterObjs, textInput } = this.state;
@@ -78,7 +110,8 @@ class App extends Component {
           textInput={textInput}
           changeLetter={(i, event) => this.changeLetterHandler(i, event)}
           changeMod={(i, mod) => this.changeModifierHandler(i, mod)}
-          changeText={(event) => this.changeTextInputHandler(event)}/>
+          changeText={(event) => this.changeTextInputHandler(event)}
+          handleSubmit={(event) => this.handleSubmit(event)}/>
         <Footer />
       </div>
     );
