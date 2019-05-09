@@ -1,8 +1,11 @@
 import React from 'react';
+import styles from './WordList.module.css';
 
 const WordList = (props) => {
   return (
-    <div />
+    <div className={styles['word-list']}>
+      {props.items}
+    </div>
   )
 }
 

@@ -1,0 +1,12 @@
+.word-list {
+  width: 20rem;
+  height: calc(100vh * .37);
+  margin: 1rem auto;
+  background: #333;
+  overflow: scroll;
+  overflow-x: hidden;
+}
+
+.word-list::-webkit-scrollbar{
+  width: 0;
+}
