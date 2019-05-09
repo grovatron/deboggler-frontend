@@ -3,7 +3,7 @@ import styles from './Grid.module.css';
 
 const Grid = (props) => {
   return (
-    <div />
+    <div className={styles.grid}/>
   )
 }
 
