@@ -21,3 +21,11 @@
   font-weight: bold;
   background: inherit;
 }
+
+.grid-square::before {
+  content: attr(mod);
+  position: absolute;
+  top: -1rem;
+  left: .25rem;
+  font-size: .75rem;
+}
