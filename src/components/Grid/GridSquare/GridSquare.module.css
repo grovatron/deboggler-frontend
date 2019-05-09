@@ -36,3 +36,90 @@
   right: .25rem;
   font-size: .75rem;
 }
+
+.selector {
+    position: absolute;
+    display: inline-block;
+    width: 1rem;
+    height: 3rem;
+    width: 3rem;
+    line-height: 3rem;
+    border-radius: 1.5rem;
+    border: 1px #333 solid;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.mod-none {
+  top: 0;
+  left: 0;
+  z-index: -1;
+  font-size: .75rem;
+  background: #fff;
+  transition: z-index .075s, top .075s, left .075s;
+}
+
+.grid-square input:focus ~ .mod-none {
+  z-index: 3;
+  top: -3rem;
+}
+
+.mod-dl {
+  top: 0;
+  left: 0;
+  z-index: -1;
+  font-size: 1rem;
+  background: #40a6f7;
+  transition: z-index .075s, top .075s, left .075s;
+}
+
+.grid-square input:focus ~ .mod-dl {
+  z-index: 3;
+  top: -2rem;
+  left: -2.75rem;
+}
+
+.mod-dw {
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+  font-size: 1rem;
+  background: #ff6479;
+  transition: z-index .075s, top .075s, left .075s;
+}
+
+.grid-square input:focus ~ .mod-dw {
+  z-index: 3;
+  bottom: -1rem;
+  left: -3rem;
+}
+
+.mod-tl {
+  top: 0;
+  right: 0;
+  z-index: -1;
+  font-size: 1rem;
+  background: #a5e45b;
+  transition: z-index .075s, top .075s, left .075s;
+}
+
+.grid-square input:focus ~ .mod-tl {
+  z-index: 3;
+  top: -2rem;
+  right: -2.75rem;
+}
+
+.mod-tw {
+  bottom: 0;
+  right: 0;
+  z-index: -1;
+  font-size: 1rem;
+  background: #fbed73;
+  transition: z-index .075s, top .075s, left .075s;
+}
+
+.grid-square input:focus ~ .mod-tw {
+  z-index: 3;
+  bottom: -1rem;
+  right: -3rem;
+}

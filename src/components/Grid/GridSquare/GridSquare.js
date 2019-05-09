@@ -14,6 +14,21 @@ const GridSquare = (props) => {
         onChange={props.changeLetter}
         name='letter'
         autoComplete='off'/>
+        <div className={`${styles.selector} ${styles['mod-none']}`}>
+          {'None'}
+        </div>
+        <div className={`${styles.selector} ${styles['mod-dl']}`}>
+          {'DL'}
+        </div>
+        <div className={`${styles.selector} ${styles['mod-dw']}`}>
+          {'DW'}
+        </div>
+        <div className={`${styles.selector} ${styles['mod-tl']}`}>
+          {'TL'}
+        </div>
+        <div className={`${styles.selector} ${styles['mod-tw']}`}>
+          {'TW'}
+        </div>
     </div>
   )
 }
