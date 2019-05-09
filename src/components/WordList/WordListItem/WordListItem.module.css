@@ -1,0 +1,22 @@
+.word-list-item {
+  position: relative;
+  text-align: center;
+  padding: 5px;
+}
+
+.word-list-item[nth='0'] {
+  background: #444;
+  color: #eaeaea;
+}
+
+.word-list-item[nth='1'] {
+  background: #eaeaea;
+  color: #444;
+}
+
+.cover {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+}

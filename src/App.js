@@ -108,9 +108,18 @@ class App extends Component {
     this.setState({ letterObjs });
   }
 
+  handleMouseOver = (i) => {
+    const filter = this.state.words[i].location;
+    this.setState({filter});
+  }
+
+  handleMouseOut = () => {
+    this.setState({filter: null});
+  }
+
   render() {
 
-    const { letterObjs, textInput, scoringSystem } = this.state;
+    const { letterObjs, cachedLetterObjs, words, textInput, scoringSystem } = this.state;
 
     return (
       <div>
@@ -118,6 +127,8 @@ class App extends Component {
         <Header title="The Deboggler"/>
         <Deboggler
           letterObjs={letterObjs}
+          cachedLetterObjs={cachedLetterObjs}
+          words={words}
           textInput={textInput}
           scoringSystem={scoringSystem}
           changeLetter={(i, event) => this.changeLetterHandler(i, event)}
@@ -125,7 +136,9 @@ class App extends Component {
           changeText={(event) => this.changeTextInputHandler(event)}
           handleSubmit={(event) => this.handleSubmit(event)}
           changeScoring={(event) => this.handleChangeScoringSystem(event)}
-          changeSize={(event) => this.handleChangeSize(event)}/>
+          changeSize={(event) => this.handleChangeSize(event)}
+          handleOver={(i) => this.handleMouseOver(i)}
+          handleOut={this.handleMouseOut}/>
         <Footer />
       </div>
     );

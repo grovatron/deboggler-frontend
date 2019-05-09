@@ -17,3 +17,19 @@ export const letterInputsValid = (letterInputs) => {
   }
   return true;
 }
+
+export const areEqual = (letterObjs, cachedLetterObjs) => {
+  if (letterObjs.length !== cachedLetterObjs.length) {
+    return false;
+  }
+  for (let i = 0; i < letterObjs.length; i++) {
+    const letterLetter = letterObjs[i].letter;
+    const cachedLetter = cachedLetterObjs[i].letter;
+    const letterMod = letterObjs[i].modifier;
+    const cachedMod = cachedLetterObjs[i].modifier;
+    if (letterLetter !== cachedLetter || letterMod !== cachedMod) {
+      return false;
+    }
+  }
+  return true;
+}
