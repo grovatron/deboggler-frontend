@@ -4,7 +4,13 @@ import styles from './GridSquare.module.css';
 const GridSquare = (props) => {
   return (
     <div className={styles['grid-square']}>
-      <input type='text' name='letter' autoComplete='off'/>
+      <input
+        type='text'
+        value={props.letter}
+        points={props.value}
+        mod={props.modifier}
+        name='letter'
+        autoComplete='off'/>
     </div>
   )
 }

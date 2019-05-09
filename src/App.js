@@ -27,11 +27,14 @@ class App extends Component {
   }
 
   render() {
+
+    const letterObjs = this.state.letterObjs;
+
     return (
       <div>
         {this.state.bootingUp ? <Modal message={this.state.messageText}/> : null}
         <Header title="The Deboggler"/>
-        <Deboggler />
+        <Deboggler letterObjs={letterObjs}/>
         <Footer />
       </div>
     );

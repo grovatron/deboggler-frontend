@@ -9,7 +9,7 @@ const Deboggler = (props) => {
   return (
     <>
       <GridContainer>
-        <Grid />
+        <Grid letterObjs={props.letterObjs}/>
       </GridContainer>
       <TextInput />
       <MenuStrip />
