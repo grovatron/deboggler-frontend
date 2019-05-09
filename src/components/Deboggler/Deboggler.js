@@ -21,7 +21,9 @@ const Deboggler = (props) => {
         handleSubmit={(event) => props.handleSubmit(event)}/>
       <MenuStrip
         scoringSystem={props.scoringSystem}
-        changeScoring={(event) => props.changeScoring(event)}/>
+        size={props.letterObjs.length}
+        changeScoring={(event) => props.changeScoring(event)}
+        changeSize={(event) => props.changeSize(event)}/>
       <WordList />
     </>
   );

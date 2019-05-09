@@ -102,9 +102,15 @@ class App extends Component {
     this.setState({ scoringSystem });
   }
 
+  handleChangeSize = (event) => {
+    const size = parseInt(event.target.value);
+    const letterObjs = Array(size).fill(null).map(letterObj => new Letter());
+    this.setState({ letterObjs });
+  }
+
   render() {
 
-    const { letterObjs, textInput } = this.state;
+    const { letterObjs, textInput, scoringSystem } = this.state;
 
     return (
       <div>
@@ -113,11 +119,13 @@ class App extends Component {
         <Deboggler
           letterObjs={letterObjs}
           textInput={textInput}
+          scoringSystem={scoringSystem}
           changeLetter={(i, event) => this.changeLetterHandler(i, event)}
           changeMod={(i, mod) => this.changeModifierHandler(i, mod)}
           changeText={(event) => this.changeTextInputHandler(event)}
           handleSubmit={(event) => this.handleSubmit(event)}
-          changeScoring={(event) => this.handleChangeScoringSystem(event)}/>
+          changeScoring={(event) => this.handleChangeScoringSystem(event)}
+          changeSize={(event) => this.handleChangeSize(event)}/>
         <Footer />
       </div>
     );

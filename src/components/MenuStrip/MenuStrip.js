@@ -8,7 +8,7 @@ const MenuStrip = (props) => {
         <option value='with friends'>Boggle With Friends</option>
         <option value='original'>Original Boggle</option>
       </select>
-      <select name='grid-size'>
+      <select name='grid-size' value={props.size} onChange={props.changeSize}>
         <option value="4">2 x 2</option>
         <option value="9">3 x 3</option>
         <option value="16">4 x 4</option>
