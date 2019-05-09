@@ -27,6 +27,7 @@ const Deboggler = (props) => {
       <GridContainer>
         <Grid
           letterObjs={props.letterObjs}
+          filter={props.filter}
           changeLetter={(i, event) => props.changeLetter(i, event)}
           changeMod={(i, mod) => props.changeMod(i, mod)}
         />

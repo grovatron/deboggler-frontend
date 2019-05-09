@@ -139,3 +139,67 @@
 .tw {
   background: #fbed73;
 }
+
+.selected {
+  border: 2px red solid;
+}
+
+.connector{
+  position: absolute;
+  width: .25rem;
+  background: red;
+}
+
+.connector-top {
+  height: .6rem;
+  top: -.7rem;
+  left: 1.25rem;
+}
+
+.connector-bottom {
+  height: .6rem;
+  bottom: -.7rem;
+  left: 1.25rem;
+}
+
+.connector-left {
+  height: .55rem;
+  top: 1.25rem;
+  left: -.45rem;
+  transform: rotate(-90deg);
+}
+
+.connector-top-left {
+  height: 1.25rem;
+  top: -1rem;
+  left: -.45rem;
+  transform: rotate(-45deg);
+}
+
+.connector-right {
+  height: .75rem;
+  top: 1.25rem;
+  right: -.5rem;
+  transform: rotate(90deg);
+}
+
+.connector-top-right {
+  height: 1.25rem;
+  top: -1em;
+  right: -.45rem;
+  transform: rotate(45deg);
+}
+
+.connector-bottom-left {
+  height: 1.25rem;
+  bottom: -1rem;
+  left: -.5rem;
+  transform: rotate(45deg);
+}
+
+.connector-bottom-right {
+  height: 1.25rem;
+  bottom: -1rem;
+  right: -.5rem;
+  transform: rotate(-45deg);
+}

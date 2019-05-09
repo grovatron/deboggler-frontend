@@ -6,9 +6,10 @@ const GridSquare = (props) => {
   const value = props.value !== 0 ? props.value : null;
   const mod = props.modifier !== 'none' ? props.modifier: null;
   const modStyle = mod ? mod.toLowerCase() : null
+  const selectedStyle = props.selected ? 'selected' : null;
 
   return (
-    <div className={[styles['grid-square'], styles[modStyle]].join(' ')} points={value} mod={mod}>
+    <div className={[styles['grid-square'], styles[modStyle], styles[selectedStyle]].join(' ')} points={value} mod={mod}>
       <input
         type='text'
         value={props.letter}
@@ -40,6 +41,7 @@ const GridSquare = (props) => {
           onMouseDown={() => props.changeMod('TW')}>
           {'TW'}
         </div>
+        <div className={`${styles.connector} ${styles[props.connectorStyle]}`}></div>
     </div>
   )
 }

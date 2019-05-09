@@ -119,7 +119,13 @@ class App extends Component {
 
   render() {
 
-    const { letterObjs, cachedLetterObjs, words, textInput, scoringSystem } = this.state;
+    const { letterObjs,
+      cachedLetterObjs,
+      words,
+      textInput,
+      scoringSystem,
+      filter
+    } = this.state;
 
     return (
       <div>
@@ -129,6 +135,7 @@ class App extends Component {
           letterObjs={letterObjs}
           cachedLetterObjs={cachedLetterObjs}
           words={words}
+          filter={filter}
           textInput={textInput}
           scoringSystem={scoringSystem}
           changeLetter={(i, event) => this.changeLetterHandler(i, event)}
