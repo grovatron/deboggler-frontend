@@ -29,3 +29,11 @@
   left: .25rem;
   font-size: .75rem;
 }
+
+.grid-square::after {
+  content: attr(points);
+  position: absolute;
+  bottom: -1rem;
+  right: .25rem;
+  font-size: .75rem;
+}
