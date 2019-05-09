@@ -1,0 +1,23 @@
+.grid-square {
+  display: inline-block;
+  position: relative;
+  width: 3rem;
+  height: 3rem;
+  margin: .25rem;
+  text-align: center;
+  line-height: 3rem;
+  background: #fff;
+  border-radius: .5rem;
+  box-sizing: border-box;
+}
+
+.grid-square input {
+  width: 1.5rem;
+  height: 1rem;
+  text-align: center;
+  border: none;
+  outline: none;
+  font-size: 1rem;
+  font-weight: bold;
+  background: inherit;
+}
