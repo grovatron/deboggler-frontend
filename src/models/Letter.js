@@ -1,6 +1,6 @@
 class Letter {
-  constructor() {
-    this.letter = '';
+  constructor(letter='') {
+    this.letter = letter;
     this.value = 0;
     this.modifier = 'none';
   }
