@@ -16,7 +16,12 @@ const Grid = (props) => {
       const value = props.letterObjs[index].value;
       const modifier = props.letterObjs[index].modifier;
       row.push(
-        <GridSquare letter={letter} value={value} modifier={modifier} key={index} />
+        <GridSquare
+          letter={letter}
+          value={value}
+          modifier={modifier}
+          changeLetter={(event) => props.changeLetter(index, event)}
+          key={index} />
       );
     }
     rows.push(
