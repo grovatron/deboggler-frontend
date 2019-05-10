@@ -11,7 +11,7 @@ export const isValidTextInput = (textInput, size) => {
 
 export const letterInputsValid = (letterInputs) => {
   for (let i = 0; i < letterInputs.length; i++) {
-    if (letterInputs[i].letter === '') {
+    if (letterInputs[i].letter === '' || letterInputs[i].letter === 'Q') {
       return false;
     }
   }
