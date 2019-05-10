@@ -107,7 +107,7 @@ class App extends Component {
     const letterObjs = Array(size).fill(null).map(letterObj => new Letter());
     this.setState({
       letterObjs,
-      textInput: null
+      textInput: ''
      });
   }
 
