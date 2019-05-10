@@ -54,6 +54,10 @@
     box-sizing: border-box;
 }
 
+.selector:hover {
+  cursor: pointer;
+}
+
 .mod-none {
   top: 0;
   left: 0;
