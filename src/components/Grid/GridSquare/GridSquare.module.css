@@ -81,6 +81,10 @@
   transition: z-index .075s, top .075s, left .075s;
 }
 
+.grid-square input {
+  cursor: pointer;
+}
+
 .grid-square input:focus ~ .mod-dl {
   z-index: 3;
   top: -2rem;
